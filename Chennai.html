@@ -35,6 +35,8 @@
             margin: 0 auto;
             padding: 0 1rem;
         }
+
+        /* Header Styles */
         header {
             background: linear-gradient(to right, #fef3c7, #fed7aa);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -135,6 +137,7 @@
             color: white;
         }
 
+        /* Search Form Styles */
         .search-section {
             padding: 2rem 0;
         }
@@ -200,6 +203,7 @@
             transform: scale(1.05);
         }
 
+        /* Hero Section Styles */
         .hero-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -246,6 +250,8 @@
         .hero-image:hover img {
             transform: scale(1.1);
         }
+
+        /* Results Section Styles */
         .results-section {
             animation: fadeIn 0.6s ease-out;
         }
@@ -311,6 +317,8 @@
             padding: 0.5rem 1rem;
             outline: none;
         }
+
+        /* Hotel Card Styles */
         .hotel-cards {
             display: flex;
             flex-direction: column;
@@ -463,6 +471,8 @@
             background: linear-gradient(to right, #dc2626, #b91c1c);
             transform: scale(1.05);
         }
+
+        /* Animations */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -496,6 +506,7 @@
             }
         }
 
+        /* Responsive Design */
         @media (min-width: 768px) {
             .search-grid {
                 grid-template-columns: repeat(5, 1fr);
@@ -520,6 +531,8 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
+
+        /* Filter dropdown styles */
         .filter-dropdown {
             display: none;
             position: absolute;
@@ -546,9 +559,11 @@
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
+                <!-- Logo Section -->
                 <div class="logo-section">
                     <div class="logo-circle">AU</div>
                     <div class="logo-text">
@@ -556,6 +571,8 @@
                         <div class="sub">HOTELS</div>
                     </div>
                 </div>
+
+                <!-- Navigation -->
                 <nav class="nav">
                     <a href="#">Destinations</a>
                     <a href="#">Resorts</a>
@@ -564,6 +581,8 @@
                     <a href="#">Deals</a>
                     <a href="#">Reservations</a>
                 </nav>
+
+                <!-- Action Buttons -->
                 <div class="header-buttons">
                     <button class="btn btn-green" onclick="alert('Language/Currency selector')">EN | INR</button>
                     <button class="btn btn-blue" onclick="alert('Sign in functionality')">Sign In</button>
@@ -571,10 +590,14 @@
             </div>
         </div>
     </header>
+
+    <!-- Main Content -->
     <div class="container">
+        <!-- Search Form -->
         <div class="search-section">
             <form class="search-form" onsubmit="handleSearch(event)">
                 <div class="search-grid">
+                    <!-- Destination -->
                     <div class="search-field">
                         <div class="field-label">
                             <span>📍</span>
@@ -582,6 +605,8 @@
                         </div>
                         <input type="text" class="field-input" placeholder="Destination or hotel" value="Kochi" id="destination">
                     </div>
+
+                    <!-- Check-in -->
                     <div class="search-field">
                         <div class="field-label">
                             <span>📅</span>
@@ -589,6 +614,8 @@
                         </div>
                         <input type="date" class="field-input" id="checkin">
                     </div>
+
+                    <!-- Check-out -->
                     <div class="search-field">
                         <div class="field-label">
                             <span>📅</span>
@@ -596,6 +623,8 @@
                         </div>
                         <input type="date" class="field-input" id="checkout">
                     </div>
+
+                    <!-- Rooms and Guests -->
                     <div class="search-field">
                         <div class="field-label">
                             <span>👥</span>
@@ -615,6 +644,8 @@
                             </select>
                         </div>
                     </div>
+
+                    <!-- Search Button -->
                     <div style="display: flex; align-items: end;">
                         <button type="submit" class="search-button" style="width: 100%;">
                             Search Hotels
@@ -622,17 +653,23 @@
                     </div>
                 </div>
             </form>
+
+            <!-- Hero Section -->
             <div class="hero-section">
                 <div class="hero-text">
-                    <h1 class="hero-title">Chennai</h1>
+                    <h1 class="hero-title">Kochi</h1>
                     <p class="hero-subtitle">Discover the beauty of God's Own Country</p>
                 </div>
                 <div class="hero-image">
                     <img src="https://images.unsplash.com/photo-1570214476695-19bd1469d1a0?w=600&h=400&fit=crop" alt="Kochi Backwaters">
                 </div>
             </div>
+
+            <!-- Results Section -->
             <div class="results-section">
                 <h2 class="results-title">Hotels in Kochi</h2>
+                
+                <!-- Filters and Sort -->
                 <div class="results-controls">
                     <div class="controls-left">
                         <div style="position: relative;">
@@ -657,13 +694,17 @@
                         </select>
                     </div>
                 </div>
+
+                <!-- Hotel Listings -->
                 <div class="hotel-cards" id="hotelCards">
+                    <!-- Hotels will be populated by JavaScript -->
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+        // Hotel data
         const hotels = [
             {
                 id: 1,
@@ -693,6 +734,8 @@
                 sustainable: true
             }
         ];
+
+        // Render stars
         function renderStars(rating) {
             let starsHTML = '';
             for (let i = 1; i <= 5; i++) {
@@ -703,6 +746,8 @@
             }
             return starsHTML;
         }
+
+        // Render hotels
         function renderHotels() {
             const container = document.getElementById('hotelCards');
             container.innerHTML = '';
@@ -710,7 +755,7 @@
             hotels.forEach((hotel, index) => {
                 const hotelCard = document.createElement('div');
                 hotelCard.className = 'hotel-card';
-                hotelCard.style.animationDelay = `${index * 200}ms`;
+                hotelCard.style.animationDelay = ${index * 200}ms;
                 
                 hotelCard.innerHTML = `
                     <div class="hotel-content">
@@ -742,6 +787,8 @@
                 container.appendChild(hotelCard);
             });
         }
+
+        // Search functionality
         function handleSearch(event) {
             event.preventDefault();
             const destination = document.getElementById('destination').value;
@@ -750,8 +797,10 @@
             const rooms = document.getElementById('rooms').value;
             const guests = document.getElementById('guests').value;
             
-            alert(`Searching for ${rooms} room(s) for ${guests} guest(s) in ${destination} from ${checkin} to ${checkout}`);
+            alert(Searching for ${rooms} room(s) for ${guests} guest(s) in ${destination} from ${checkin} to ${checkout});
         }
+
+        // Filter toggle
         function toggleFilters() {
             const dropdown = document.getElementById('filterDropdown');
             const chevron = document.getElementById('filterChevron');
@@ -760,15 +809,19 @@
             chevron.classList.toggle('rotated');
         }
 
+        // Sort functionality
         function handleSort() {
             const sortBy = document.getElementById('sortBy').value;
-            alert(`Sorting by: ${sortBy}`);
+            alert(Sorting by: ${sortBy});
         }
 
+        // Book hotel
         function bookHotel(hotelId) {
             const hotel = hotels.find(h => h.id === hotelId);
-            alert(`Booking ${hotel.name} for ₹${hotel.price}/night`);
+            alert(Booking ${hotel.name} for ₹${hotel.price}/night);
         }
+
+        // Set default dates
         function setDefaultDates() {
             const today = new Date();
             const tomorrow = new Date(today);
@@ -777,10 +830,14 @@
             document.getElementById('checkin').value = today.toISOString().split('T')[0];
             document.getElementById('checkout').value = tomorrow.toISOString().split('T')[0];
         }
+
+        // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
             renderHotels();
             setDefaultDates();
         });
+
+        // Close filter dropdown when clicking outside
         document.addEventListener('click', function(event) {
             const filterButton = event.target.closest('.filter-button');
             const filterDropdown = document.getElementById('filterDropdown');
