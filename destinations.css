@@ -1,0 +1,229 @@
+body{
+    background-color: white;
+    color: black;
+}
+.dark_mode{
+    background-color: black;
+    color: white;
+}
+.dark_m{
+    background-color: white;
+    color: black;
+    
+}
+
+.centered {
+    position: absolute;
+
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+   font-size:xx-large;
+   animation: fd 1s ease-in forwards;
+   
+} 
+@Keyframes fd{
+    0% {opacity: .3}
+    100% {opacity: 1}
+}
+
+.btn{
+    background-color: rgb(173,139,58);
+    color: white;
+    border: 1px solid ;
+    padding: 10px 15px;
+    text-align: center;
+    font: weight 30px;;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 9%;
+}
+.btn:hover{
+    background-color: #BBC1AD;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.zo-im img:hover{
+    transform: scale(1.2);
+    object-fit: cover;
+}
+.zo-im img{
+    transition: 0.9s ease;
+}
+.zo-im {
+    overflow: hidden;
+}
+.box{
+    background-color: white;
+    width: 388px;
+    height: 438px;
+   margin: 1%;
+    border: 1.75px solid gold;
+    border-radius: 3%;
+}
+.bo1{
+    object-fit: cover;
+}
+.ov-txt{
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: white; 
+    color: black;
+}
+.flex-co{
+    display: flex;
+}
+#city{
+    border: 1px solid black;
+    background-color: azure;
+    padding-top: 5px;
+    border-radius: 3%;
+    float: left;
+}
+.Head{
+    color:olive;
+    font-family:"Inter, Cinzel, sans-serif";
+    text-align: center;
+    font-weight: 100;
+}
+.scroll-text{
+    font-family:"Inter, Cinzel, sans-serif";
+    font-size: small;
+}
+.bop{
+    
+    border: 2px solid olive;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 220px;
+    width: 500px;
+}
+#adj{
+    height:300px ;
+    padding-left: 30px;
+}
+#adj1{
+    height:300px ;
+    padding-right: 30px;
+    display: flex;
+    justify-content: end;
+}
+#img-aln{
+    border: 1px solid olive;
+    height: 350px;
+    width: 650px;
+    object-fit:cover;
+    overflow: hidden;  
+    
+}
+#img-aln img{
+    scale: 0.5em;;
+}
+
+.sup
+{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.supp{
+    display: flex;
+}
+
+#dot1 {
+    background-image: url(https://images.squarespace-cdn.com/content/v1/54a4656fe4b037e9babd6ec9/1525669925757-IR2EG4NQ7B7SCU776P1W/ke17ZwdGBToddI8pDm48kHH9S2ID7_bpupQnTdrPcoF7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0nQwvinDXPV4EYh2MRzm-RRB5rUELEv7EY2n0AZOrEupxpSyqbqKSgmzcCPWV5WMiQ/Blog+images-17.jpg); 
+    
+}
+#dot1:hover{
+    background-image: url(https://images.squarespace-cdn.com/content/v1/54a4656fe4b037e9babd6ec9/1525669925757-IR2EG4NQ7B7SCU776P1W/ke17ZwdGBToddI8pDm48kHH9S2ID7_bpupQnTdrPcoF7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0nQwvinDXPV4EYh2MRzm-RRB5rUELEv7EY2n0AZOrEupxpSyqbqKSgmzcCPWV5WMiQ/Blog+images-17.jpg); 
+}
+#dot2 {
+    background-image: url(https://mymodernmet.com/wp/wp-content/uploads/2017/11/best-photos-of-2017-kirstina-makeeva.jpg);
+}
+#dot2:hover{
+    background-image: url(https://mymodernmet.com/wp/wp-content/uploads/2017/11/best-photos-of-2017-kirstina-makeeva.jpg);  
+}
+#dot3 {
+    background-image: url(https://media.wired.com/photos/5fb70f2ce7b75db783b7012c/master/pass/Gear-Photos-597589287.jpg); 
+}
+#dot3:hover{
+    background-image: url(https://media.wired.com/photos/5fb70f2ce7b75db783b7012c/master/pass/Gear-Photos-597589287.jpg); 
+}
+#dot4 {
+    background-image: url(https://thumbs.dreamstime.com/b/assault-course-competitor-helping-others-crawl-under-nets-59878856.jpg); 
+}
+#dot4:hover{
+    background-image: url(https://thumbs.dreamstime.com/b/assault-course-competitor-helping-others-crawl-under-nets-59878856.jpg); 
+}
+
+.dot{
+    background-color: rgb(173, 139, 58);
+    height: 140px;
+    width: 140px;
+    border: 7px solid rgb(173, 139, 58);
+    border-radius: 50%;
+    background-size: cover;
+    margin-bottom: 10px;
+}
+
+.dot:hover{
+    transition: 0.5s;
+    background-color: rgb(255, 255, 255);
+    filter: opacity(0.2);
+    height: 140px;
+    width: 140px;
+    border: 7px solid rgb(173, 139, 58);
+    border-radius: 50%;
+    background-size: cover;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.subheadings{
+    font-family:'Times New Roman', Times, serif;
+    font-size: large;
+    color: olive;
+}
+
+.subheadings:hover{
+    color: black;
+}
+
+.Super{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+figure{
+    display: inline-block;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+figcaption{
+    text-align: center;
+}
+.flexbut{
+    background-color: aliceblue;
+    position: absolute;
+    top: 2875px;
+    left: 30px;
+    width: 80px;
+   
+    border: 1px solid #73AD21;
+    font-family: sans-serif;
+    border-radius: 9px;
+    justify-content: center;
+    text-align: center;
+    bottom: 100px;
+
+}
+
