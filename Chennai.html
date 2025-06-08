@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -755,7 +756,7 @@
             hotels.forEach((hotel, index) => {
                 const hotelCard = document.createElement('div');
                 hotelCard.className = 'hotel-card';
-                hotelCard.style.animationDelay = ${index * 200}ms;
+                hotelCard.style.animationDelay = `${index * 200}ms`;
                 
                 hotelCard.innerHTML = `
                     <div class="hotel-content">
@@ -797,7 +798,7 @@
             const rooms = document.getElementById('rooms').value;
             const guests = document.getElementById('guests').value;
             
-            alert(Searching for ${rooms} room(s) for ${guests} guest(s) in ${destination} from ${checkin} to ${checkout});
+            alert(`Searching for ${rooms} room(s) for ${guests} guest(s) in ${destination} from ${checkin} to ${checkout}`);
         }
 
         // Filter toggle
@@ -812,13 +813,13 @@
         // Sort functionality
         function handleSort() {
             const sortBy = document.getElementById('sortBy').value;
-            alert(Sorting by: ${sortBy});
+            alert(`Sorting by: ${sortBy}`);
         }
 
         // Book hotel
         function bookHotel(hotelId) {
             const hotel = hotels.find(h => h.id === hotelId);
-            alert(Booking ${hotel.name} for ₹${hotel.price}/night);
+            alert(`Booking ${hotel.name} for ₹${hotel.price}/night`);
         }
 
         // Set default dates
