@@ -820,6 +820,7 @@
         function bookHotel(hotelId) {
             const hotel = hotels.find(h => h.id === hotelId);
             alert(`Booking ${hotel.name} for ₹${hotel.price}/night`);
+            window.location.href="payment_portal.html";
         }
 
         // Set default dates
