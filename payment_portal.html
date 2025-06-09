@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="styles_payment.css">
+    <link rel="icon"  type="image/x-icon" href="credit-card.png">
+</head>
+
+<body>
+    <div id="payment_portal">
+        <div class="h1_h3">
+            <h1>PAYMENT PORTAL</h1>
+            <h3>Amrita Destinations</h3>
+        </div>
+        <div class="blocks"></div>
+            <form action="/action_page.php">
+                <div class="payment_details_block">
+                    <label for="payment_method" class="A">Choose payment method</label><hr>
+                    <span class="payment_selection_1">
+                        <button type="button" id="cash" name="cash" onclick="showPaymentMethod('cash')"><img src="cash-svgrepo-com.svg" alt="cash">   cash</button>
+                        <button type="button" id="card" name="card" onclick="showPaymentMethod('card_visa_div')"><img src="card-credit-atm-svgrepo-com.svg" alt="card">   card</button>
+                        <button type="button" id="gpay" name="gpay" onclick="showPaymentMethod('gpay_paytm_paypal_div')"><img src="google-pay-primary-logo-logo-svgrepo-com.svg" alt="gpay"></button>
+                    </span>
+                    <span class="payment_selection_2">
+                        <button type="button" id="paytm" name="paytm" onclick="showPaymentMethod('gpay_paytm_paypal_div')"><img src="paytm-svgrepo-com.svg" alt="paytm"></button>
+                        <button type="button" id="paypal" name="paypal" onclick="showPaymentMethod('gpay_paytm_paypal_div')"><img src="paypal-3-svgrepo-com.svg" alt="paypal"></button>
+                        <button type="button" id="visa" name="visa" onclick="showPaymentMethod('card_visa_div')"><img src="visa-svgrepo-com.svg" alt="visa"></button>
+                    </span>
+                    <div class="payment_method_div">
+                        <div class="card_visa_div">
+                            <p class="card_visa">CARD PAYMENT</p><hr>
+                            <div>
+                                <label for="first_name">Enter your card details:</label><br>
+                                <input type="number" id="card_number" name="card_number" size="40" pattern="[0-9\s-]{12,16}" title="Card number must be 12-16 digits. Whitespaces and hyphens are allowed" 
+                                placeholder="3782 8224 6310 005" required><br>
+                                <input type="date" id="expiry_date" size="7" required>
+                                <input type="text" id="first_name" name="first_name" size="25" minlength="3" pattern="[A-Za-z\s]*" placeholder="card holder name" required style="margin-left: 0.5%;">
+                                <input type="password" id="cvv" name="cvv" size="3" minlength="3" maxlength="3" placeholder="cvv">
+                            </div>
+                        </div>
+                        <div class="gpay_paytm_paypal_div">
+                            <p class="gpay_paytm_paypal">UPI PAYMENT</p><hr>
+                            <div>
+                                <label for="UPI ID">Enter <span class="gpay_paytm_paypal">GPAY</span> UPI ID:</label><br>
+                                <input type="text" id="UPI_ID" name="UPI_ID" size="43" pattern="[0-9A-Za-z@.]{10}" placeholder="Enter UPI ID" required>
+                            </div>
+                        </div>
+                        <br>
+                        <p id="cashp"></p>
+                        <input type="submit" value="Submit" onclick="handleFormSubmit()">
+                    </div>
+                    
+                </div>
+                
+                <div class="gen_details_block">
+                    <p>Contact Details:</p><hr>
+                    <label for="first_name">First name:</label><br>
+                    <input type="text" id="first_name_gen_details" name="first_name_gen_details" size="40" minlength="3" pattern="[A-Za-z]+"
+                    placeholder="Enter your first name." required><br>
+                    <label for="last_name">Last name:</label><br>
+                    <input type="text" id="last_name" name="last_name" size="40" minlength="3"  pattern="[A-Za-z]+" placeholder="Enter your last name." required><br>
+                    <label for="email_details">Email: </label><br>
+                    <input type="email_details" size="40" id="email_details" name="email_details" placeholder="example@gmail.com" required><br>
+                    <label for="upload_id">Upload ID (Adhaar, PAN card, Driver's license, etc):</label><br>
+                    <input type="file" required><br>
+                    <label for="addresss_home">Address: </label><br>
+                    <input type="text" id="addresss_home" name="addresss_home" size="40" placeholder="Enter Address" required><br>
+                    <label for="phone_number">Phone Number:</label><br>
+                    <input type="number" id="country_code" name="country_code" size="3" minlength="2" maxlength="3" placeholder="+91" style="width: 50px;" required>
+                    <input type="tel" id="phone_number" name="phone_number" size="31" minlength="10" maxlength="10" placeholder="12-3456-7890" pattern="[0-9]{10}" style="width: 200px;" required>
+                    <div class="booking_details">
+                        <p>Enter Booking Details:</p><hr>
+                        <div class="form-group">
+                            <label for="destinations">Choose a destination:</label>
+                            <select id="destinations" name="destination">
+                                <option value="">Select destination</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Bangalore">Bangalore</option>
+                            </select>
+                            <label for="hotels">Choose a hotel:</label>
+                            <select name="hotel" id="hotels" disabled>
+                                <option value="">Select a hotel</option>
+                            </select>
+                            <label for="rooms">Number of rooms:</label>
+                            <input type="number" name="rooms" id="rooms" >
+                        </div>
+                        <p>Payment Details:</p><hr>
+                        <div>
+                            <p id="purchase_list">Nothing purchised yet</p>
+                        </div>
+                        <div><p>Total Price: <span id="total_price">__________</span></p></div>
+                    </div>
+            </div>
+        </form>
+    </div>
+    <div id="billing_portal">
+        <h1>Bill Payment Portal</h1>
+        
+        <div class="bill-details">
+            <h2>Bill Summary</h2>
+            <table>
+                <tr>
+                    <th>Bill Number</th>
+                    <td class="bill_no"></td>
+                </tr>
+                <tr>
+                    <th>Customer Name</th>
+                    <td class="bill_customer_name"></td>
+                </tr>
+                <tr>
+                    <th>Due Date</th>
+                    <td class="bill_date"></td>
+                </tr>
+                <tr>
+                    <th>Destination</th>
+                    <td class="bill_dest"></td>
+                </tr>
+                <tr>
+                    <th>Hotels</th>
+                    <td class="bill_hotel"></td>
+                </tr>
+                <tr>
+                    <th>No of Rooms booked</th>
+                    <td class="bill_rooms"></td>
+                </tr>
+                <tr>
+                    <th>Total Amount</th>
+                    <td class="bill_amount"></td>
+                </tr>
+            </table>
+        </div>
+    <script src="script.js"></script>     
+</body>
+</html>
+</form> 
