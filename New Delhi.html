@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amrita Hotels - Luxury Stays in Kerala</title>
+    <title>Destination -  Delhi Hotels</title>
     <meta name="description" content="Discover luxury hotels and resorts in Kerala with Amrita Hotels. Book your perfect stay with world-class amenities and breathtaking views.">
     <meta name="author" content="Amrita Hotels">
     
@@ -16,6 +16,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@amrita_hotels">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1570214476695-19bd1469d1a0?w=1200&h=630&fit=crop">
+    <link rel="icon" type="image/x-icon" href="building.png">
 
     <style>
         * {
@@ -568,7 +569,7 @@
                 <div class="logo-section">
                     <div class="logo-circle">AU</div>
                     <div class="logo-text">
-                        <div class="main">AMRITA</div>
+                        <div class="main">Delhi</div>
                         <div class="sub">HOTELS</div>
                     </div>
                 </div>
@@ -604,7 +605,7 @@
                             <span>📍</span>
                             <span>Where are you going?</span>
                         </div>
-                        <input type="text" class="field-input" placeholder="Destination or hotel" value="Kochi" id="destination">
+                        <input type="text" class="field-input" placeholder="Destination or hotel" value="Delhi" id="destination">
                     </div>
 
                     <!-- Check-in -->
@@ -658,17 +659,17 @@
             <!-- Hero Section -->
             <div class="hero-section">
                 <div class="hero-text">
-                    <h1 class="hero-title">New Delhi</h1>
-                    <p class="hero-subtitle">Discover the beauty of God's Own Country</p>
+                    <h1 class="hero-title">Delhi</h1>
+                    <p class="hero-subtitle">Discover the Dildaar Dilli</p>
                 </div>
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1570214476695-19bd1469d1a0?w=600&h=400&fit=crop" alt="Kochi Backwaters">
+                    <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGVsaGl8ZW58MHx8MHx8fDA%3D" alt="Hydarabad Backwaters">
                 </div>
             </div>
 
             <!-- Results Section -->
             <div class="results-section">
-                <h2 class="results-title">Hotels in Kochi</h2>
+                <h2 class="results-title">Hotels in Delhi</h2>
                 
                 <!-- Filters and Sort -->
                 <div class="results-controls">
@@ -709,8 +710,8 @@
         const hotels = [
             {
                 id: 1,
-                name: "Radisson Blue Kollam International Airport",
-                location: "Kerala, India",
+                name: "ITC Maurya",
+                location: "Delhi, India",
                 rating: 5.0,
                 price: "6,884.24",
                 image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop",
@@ -718,17 +719,17 @@
             },
             {
                 id: 2,
-                name: "Radisson Blue Varkala International Beach",
-                location: "Kerala, India",
+                name: "The Leela Palace",
+                location: "Delhi, India",
                 rating: 4.0,
                 price: "5,200.50",
-                image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=400&h=300&fit=crop",
+                image: "https://lh3.googleusercontent.com/p/AF1QipNWtGI-mHhuiaEGEjv0RyBBJI9kteedg7CYDrVw=w574-h384-n-k-rw-no-v1",
                 sustainable: true
             },
             {
                 id: 3,
-                name: "Radisson Peru Hotels",
-                location: "Kerala, India",
+                name: "Taj Hotels",
+                location: "Delhi, India",
                 rating: 5.0,
                 price: "7,500.00",
                 image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
@@ -820,6 +821,7 @@
         function bookHotel(hotelId) {
             const hotel = hotels.find(h => h.id === hotelId);
             alert(`Booking ${hotel.name} for ₹${hotel.price}/night`);
+            window.location.href="payment_portal.html";
         }
 
         // Set default dates
