@@ -203,3 +203,30 @@ h1 {
         font-size: 12px;
     }
 }
+
+#payment_portal {
+    transform: scale(1.01);
+    transform-origin: top left;
+    width: 100%;
+    overflow: hidden;
+}
+
+#billing_portal {
+    transform: scale(1.01);
+    transform-origin: top left;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+form {
+    display: flex;
+    gap: 0px;
+    width: 100%;
+}
+
+button {transition: transform 0.2s ease-in-out;}
+button:hover {transform: scale(1.1);}
+input {transition: transform 0.2s ease-in-out;}
+input:hover {transform: scale(1.04);}
