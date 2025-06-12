@@ -17,7 +17,8 @@
     <meta name="twitter:site" content="@amrita_hotels">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1570214476695-19bd1469d1a0?w=1200&h=630&fit=crop">
     <link rel="icon" type="image/x-icon" href="building.png">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap">
     <style>
         * {
             margin: 0;
@@ -558,6 +559,112 @@
         .chevron.rotated {
             transform: rotate(180deg);
         }
+        .footer{
+background:#000;
+padding:30px 0px;
+font-family: 'Play', sans-serif;
+text-align:center;
+}
+
+.footer .row{
+width:100%;
+margin:1% 0%;
+padding:0.6% 0%;
+color:gray;
+font-size:0.8em;
+}
+
+.footer .row a{
+text-decoration:none;
+color:gray;
+transition:0.5s;
+}
+
+.footer .row a:hover{
+color:#fff;
+}
+
+.footer .row ul{
+width:100%;
+}
+
+.footer .row ul li{
+display:inline-block;
+margin:0px 25px;
+}
+
+.footer .row a i{
+font-size:2em;
+margin:0% 1%;
+}
+
+@media (max-width:720px){
+.footer{
+text-align:left;
+padding:5%;
+}
+.footer .row ul li{
+display:block;
+margin:10px 0px;
+text-align:left;
+}
+.footer .row a i{
+margin:0% 3%;
+}
+}
+.footer{
+background:#000;
+padding:30px 0px;
+font-family: 'Play', sans-serif;
+text-align:center;
+}
+
+.footer .row{
+width:100%;
+margin:1% 0%;
+padding:0.6% 0%;
+color:gray;
+font-size:0.8em;
+}
+
+.footer .row a{
+text-decoration:none;
+color:gray;
+transition:0.5s;
+}
+
+.footer .row a:hover{
+color:#fff;
+}
+
+.footer .row ul{
+width:100%;
+}
+
+.footer .row ul li{
+display:inline-block;
+margin:0px 25px;
+}
+
+.footer .row a i{
+font-size:2em;
+margin:0% 1%;
+}
+
+@media (max-width:720px){
+.footer{
+text-align:left;
+padding:5%;
+}
+.footer .row ul li{
+display:block;
+margin:10px 0px;
+text-align:left;
+}
+.footer .row a i{
+margin:0% 3%;
+}
+}
     </style>
 </head>
 <body>
@@ -702,6 +809,48 @@
                     <!-- Hotels will be populated by JavaScript -->
                 </div>
             </div>
+        </div>
+    </div>
+    <footer id="footerId">
+        <div style="float: right;"><br><iframe width="200" height="100%" src="https://www.openstreetmap.org/export/embed.html?bbox=78.20720672607423%2C17.280824848908882%2C78.56838226318361%2C17.57170248052992&amp;layer=mapnik" style="border: 1px solid black"></iframe></div>
+        <div class="footer">
+        <div class="row">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+        </div>
+
+        <div class="row">
+            <ul>
+                <li><a onclick="showContactForm()">Contact us</a></li>
+                <li><a href="#flex-co">Our Services</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            NoCopyright Copyright © 2025 Destinations - All rights reserved.
+        </div>
+    </div>
+    
+
+    </footer>
+
+    <div id="contact-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:2; justify-content:center; align-items:center;">
+        <div style="background:#fff; padding:30px; border-radius:8px; max-width:400px; margin:auto; position:relative;">
+            <span onclick="hideContactForm()" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer;">&times;</span>
+            <h2 style="margin-top:0;">Contact Us</h2>
+            <form>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required style="width:100%;margin-bottom:10px;"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required style="width:100%;margin-bottom:10px;"><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required style="width:100%;margin-bottom:10px;"></textarea><br>
+                <button type="submit" style="padding:8px 16px;">Send</button>
+            </form>
         </div>
     </div>
 
@@ -849,6 +998,24 @@
                 filterDropdown.classList.remove('show');
                 document.getElementById('filterChevron').classList.remove('rotated');
             }
+        });
+        function showContactForm() {
+            document.getElementById('contact-modal').style.display = 'flex';
+        }
+
+        function hideContactForm() {
+            document.getElementById('contact-modal').style.display = 'none';
+        }
+
+        // Attach to existing contact link
+        document.getElementById('contact-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            showContactForm();
+        });
+
+        // Close modal with close button    
+        document.getElementById('close-modal').addEventListener('click', function() {
+            hideContactForm();
         });
     </script>
 </body>
