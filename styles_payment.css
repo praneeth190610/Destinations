@@ -21,7 +21,8 @@ form {width: max-content;}
     display: flex;
     align-items: center;
     padding: 5px;
-    width: 30%;
+    margin: 10px;
+    width: 40%;
     border: 0px solid #ffffff;
     background-color: lightgray;
     border-radius: 5px;
@@ -30,8 +31,8 @@ form {width: max-content;}
 }
 
 .payment_selection_1 button img, .payment_selection_2 button img {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     margin-right: 10px;
 }
 
@@ -49,6 +50,7 @@ form {
     border-left: 2px solid dimgray;
     margin-top: 30px;
     margin-left: 10px;
+    margin-right: 50px;
     background-color: white;
     padding-left: 40px;
     padding-right: 20px;
@@ -75,30 +77,30 @@ form {
 }
 
 .gen_details_block, .payment_details_block {
-  flex: 1;
-  min-width: 0;
+    flex: 1;
+    min-width: 0;
 }
 
 .gen_details_block label, .payment_details_block label {
-  display: block;
-  margin-bottom: 1px;
-  line-height: 1;
+    display: block;
+    margin-bottom: 1px;
+    line-height: 1;
 }
 
 .gen_details_block input, .gen_details_block select, .payment_details_block input, .payment_details_block select {
-  margin-bottom: 10px;
-  width: 100%;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 .booking_details {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .card_visa_div{
-  display: none;
+    display: none;
 }
 .gpay_paytm_paypal_div{
-  display: none;
+    display: none;
 }
 
 
@@ -155,6 +157,7 @@ h1 {
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
+        margin: auto;
     }
 
     .payment_selection_1 button, .payment_selection_2 button {
@@ -175,13 +178,22 @@ h1 {
     .bill-details table {
         font-size: 14px;
     }
+
+    #payment_portal, #billing_portal {
+        transform: scale(1.1);
+        width: 100%;
+    }
+
+    form {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 @media (max-width: 480px) {
     .payment_selection_1 button, .payment_selection_2 button {
         width: 100%;
     }
-
     .payment_details_block, .gen_details_block {
         padding: 10px;
     }
@@ -198,11 +210,17 @@ h1 {
         font-size: 14px;
     }
 
-  .bill-details th, .bill-details td {
+    .bill-details th, .bill-details td {
         padding: 5px;
         font-size: 12px;
     }
+
+    #payment_portal, #billing_portal {
+        transform: scale(1);
+        width: 100%;
+    }
 }
+
 
 #payment_portal {
     transform: scale(1.01);
