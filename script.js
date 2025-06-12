@@ -46,13 +46,12 @@ destination_selected.addEventListener('change', function() {
 });
 
 function updateDisplay() {
-  const maxRooms = 100;
   const dest = destination_selected.value || "Not selected";
   const hotel = hotel_selected.options[hotel_selected.selectedIndex]?.text || "Not selected";
-  const rooms = no_rooms_selected.value && Number(no_rooms_selected.value) > 0 && Number(no_rooms_selected.value) <= maxRooms ? no_rooms_selected.value : 0;
+  const rooms = no_rooms_selected.value && Number(no_rooms_selected.value) > 0 ? no_rooms_selected.value : 0;
   
   let total_price = 0;
-  if (hotel_selected.value && no_rooms_selected.value && Number(no_rooms_selected.value) > 0 && Number(no_rooms_selected.value) <= maxRooms) {
+  if (hotel_selected.value && no_rooms_selected.value && Number(no_rooms_selected.value) > 0) {
     const selected_destination = destination_selected.value;
     const selected_hotel_value = hotel_selected.value;
     const hotel_data = hotel_dataset[selected_destination]?.find(hotel => hotel.value === selected_hotel_value);
